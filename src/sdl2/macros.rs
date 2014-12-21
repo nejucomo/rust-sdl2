@@ -1,6 +1,6 @@
 #![macro_escape]
 
-macro_rules! impl_raw_accessors(
+macro_rules! impl_raw_accessors{
     ($($t:ty, $raw:ty);+) => (
         $(
         impl $t {
@@ -9,9 +9,9 @@ macro_rules! impl_raw_accessors(
         }
         )+
     )
-)
+}
 
-macro_rules! impl_owned_accessors(
+macro_rules! impl_owned_accessors{
     ($($t:ty, $owned:ident);+) => (
         $(
         impl $t {
@@ -20,9 +20,9 @@ macro_rules! impl_owned_accessors(
         }
         )+
     )
-)
+}
 
-macro_rules! impl_raw_constructor(
+macro_rules! impl_raw_constructor{
     ($($t:ty -> $te:ident ($($r:ident:$rt:ty),+));+) => (
         $(
         impl $t {
@@ -33,4 +33,4 @@ macro_rules! impl_raw_constructor(
         }
         )+
     )
-)
+}
